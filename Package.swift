@@ -10,7 +10,7 @@ let package = Package(
   targets: [
     .binaryTarget(
       name: "AlprKit",
-      url: "https://alpr.parkr.app/sdk/ios/0.4.0/AlprKit-0.4.0.xcframework.zip",
+      url: "https://github.com/parkr-app/alpr-ios/releases/download/0.4.0/AlprKit-0.4.0.xcframework.zip",
       checksum: "a20d5c7ea211a8a3145792127bb10f3eb44cfacc42d0bf12bb61a923fd9cb428"
     ),
   ]
