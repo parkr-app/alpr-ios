@@ -1,0 +1,26 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  swift-package:
+    runs-on: macos-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+      - name: Resolve AlprKit and verify the xcframework checksum
+        working-directory: ci/Consumer
+        run: xcodebuild -resolvePackageDependencies -scheme Consumer
+      - name: Build the README examples against AlprKit
+        working-directory: ci/Consumer
+        run: xcodebuild build -scheme Consumer -destination 'generic/platform=iOS' -quiet
