@@ -63,7 +63,7 @@ final class ScannerViewController: UIViewController, AlprCameraViewDelegate {
 }
 ```
 
-`AlprCameraView` properties: `isActive`, `showFps`, `mockImage`, `recognizesPlates`, `scansPlates`, and the PRO properties `throttle`, `torch`, `zoom`, `scanRegion`, `overlayStyle`, `detectionThreshold`, `ocrThreshold`, `accelerator`. Turning off `showOverlay` or `showScanRegion` is PRO.
+`AlprCameraView` properties: `isActive`, `showFps`, `mockImage`, `recognizesPlates`, `scansPlates`, and the PRO properties `throttle`, `torch`, `zoom`, `region`, `overlayStyle`, `detectionThreshold`, `ocrThreshold`, `accelerator`. Turning off `showOverlay` or `showRegion` is PRO.
 
 Delegate methods:
 
